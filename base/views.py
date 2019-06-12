@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . forms import RegistrationForm
+from . models import ClassName
 
 def index(request):
     form=RegistrationForm()
@@ -10,4 +11,14 @@ def index(request):
     return render(request,"base/index.html",context)
 
 def introduction(request):
-    return HttpResponse("<h2>I am shiv sharma</h2>")
+    email=request.POST.get('email')
+    first=request.POST.get('first_name')
+    last=request.POST.get('last_name')
+    c = ClassName(first2=first, last2=last, email2=email)
+    c.save()
+    context={
+    "my_email": email,
+    "myfirstname": first,
+    "mylastname":last
+    }
+    return render(request,"base/home.html",context)

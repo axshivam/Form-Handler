@@ -5,9 +5,9 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="{url 'index'}" method="post">
+    <form class="" action="{url 'app'}" method="post">
       {% csrf_token %}
-      {{myregistrationform.as_ul}}
+      {{myregistrationform.as_p}}
       <input type="submit" name="Register" value="">
     </form>
   </body>
