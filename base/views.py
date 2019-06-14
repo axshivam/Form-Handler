@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . forms import RegistrationForm
-from . models import ClassName
+from . models import MyformData
 
 def index(request):
     form=RegistrationForm()
@@ -14,7 +14,7 @@ def introduction(request):
     email=request.POST.get('email')
     first=request.POST.get('first_name')
     last=request.POST.get('last_name')
-    c = ClassName(first2=first, last2=last, email2=email)
+    c = MyformData(first2=first, last2=last, email2=email)
     c.save()
     context={
     "my_email": email,
