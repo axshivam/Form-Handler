@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     url(r'^$',views.index,name='index'),
     url('app',views.introduction,name=''),
+    url('db',views.index1,name=''),
 ]

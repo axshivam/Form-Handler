@@ -3,6 +3,13 @@ from django.http import HttpResponse
 from . forms import RegistrationForm
 from . models import MyformData
 
+def index1(request):
+    all_form =  MyformData.objects.all()
+    context = {
+    "shiv":all_form
+    }
+    return render(request, "base/db.html", context)
+
 def index(request):
     form=RegistrationForm()
     context={
