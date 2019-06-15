@@ -23,9 +23,14 @@ def introduction(request):
     last=request.POST.get('last_name')
     c = MyformData(first2=first, last2=last, email2=email)
     c.save()
-    context={
-    "my_email": email,
-    "myfirstname": first,
-    "mylastname":last
+    all_form =  MyformData.objects.all()
+    context = {
+    "shiv":all_form
     }
-    return render(request,"base/home.html",context)
+    return render(request, "base/db.html", context)
+    #context={
+    #"my_email": email,
+    #"myfirstname": first,
+    #"mylastname":last
+    #}
+    #return render(request,"base/home.html",context)
