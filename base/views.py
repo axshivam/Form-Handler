@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . forms import RegistrationForm
 from . models import MyformData
+from django.contrib.auth import authenticate, login, logout
 
 def index1(request):
     all_form =  MyformData.objects.all()
@@ -34,3 +35,26 @@ def introduction(request):
     #"mylastname":last
     #}
     #return render(request,"base/home.html",context)
+
+
+
+
+
+
+
+
+    #These are function of checking django login Authentication
+def user_login(request):
+    context ={}
+    if request.method == "POST":
+        pass
+    else:
+        return render(request, "auth/login.html", context)
+
+
+def success(request):
+    pass
+
+
+def user_logout(request):
+    pass
