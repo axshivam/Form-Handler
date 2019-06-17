@@ -1,0 +1,8 @@
+
+{% block content %}
+<p>User <b>{{user.username}}</b> is logged in successfully</p>
+<form class="" action="{url 'login'}" method="POST">
+  {% csrf_token %}
+  <input type="submit" name="logout" value="">
+</form>
+{% endblock content %}
