@@ -21,6 +21,7 @@ from base import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('base/',include('base.urls')),
+    path('',views.first)
     #path('hello1/', views.introduction),
     #path('hello/', views.index),
 ]

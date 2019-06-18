@@ -8,3 +8,7 @@ class MyformData(models.Model):
     first2 = models.CharField(max_length=30)
     last2 = models.CharField(max_length=30)
     published_date=models.DateTimeField(blank=True,null=True)
+
+class MobileNumber(models.Model):
+    """docstring forMobileNumber."""
+    Mobile = models.IntegerField(max_length=12)

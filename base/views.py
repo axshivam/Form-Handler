@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . forms import RegistrationForm
 from . models import MyformData
+from . models import MobileNumber
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
@@ -12,6 +13,8 @@ def index1(request):
     "shiv":all_form
     }
     return render(request, "base/db.html", context)
+def first(request):
+    pass
 
 def index(request):
     form=RegistrationForm()
