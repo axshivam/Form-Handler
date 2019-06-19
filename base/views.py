@@ -14,7 +14,11 @@ def index1(request):
     }
     return render(request, "base/db.html", context)
 def first(request):
-    pass
+    all_mobile = MobileNumber.objects.all()
+    context = {
+      "shiv1":all_mobile
+    }
+    return render(request, "base/db1.html",context)
 
 def index(request):
     form=RegistrationForm()

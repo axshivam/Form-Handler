@@ -11,4 +11,4 @@ class MyformData(models.Model):
 
 class MobileNumber(models.Model):
     """docstring forMobileNumber."""
-    Mobile = models.IntegerField(max_length=12)
+    Mobile = models.IntegerField()
